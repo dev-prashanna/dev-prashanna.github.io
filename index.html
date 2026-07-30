@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev-prashanna // AI Security Researcher</title>
+    <meta name="description" content="Prashanna Tiwari - Security researcher at the intersection of AI and Cyberspace. Building AI-driven offensive tools, adversarial ML systems, and intelligent threat analysis platforms.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <canvas id="scanline-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-prefix">root@</span>prashanna<span class="logo-cursor">_</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link"><span class="nav-index">01</span>about</a>
+                <a href="#skills" class="nav-link"><span class="nav-index">02</span>skills</a>
+                <a href="#projects" class="nav-link"><span class="nav-index">03</span>projects</a>
+                <a href="#research" class="nav-link"><span class="nav-index">04</span>research</a>
+                <a href="#contact" class="nav-link"><span class="nav-index">05</span>contact</a>
+            </div>
+            <div class="nav-status">
+                <span class="status-dot"></span>
+                <span class="status-text">ONLINE</span>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-terminal-line animate-fade-in">
+                    <span class="terminal-prefix">$</span>
+                    <span class="terminal-command">whoami</span>
+                </div>
+                <h1 class="hero-name animate-slide-up">
+                    <span class="name-line"><span class="name-bracket">[</span>PRASHANNA<span class="name-bracket">]</span></span>
+                    <span class="name-line accent">TIWARI</span>
+                </h1>
+                <div class="hero-role animate-slide-up">
+                    <span class="role-bracket">&lt;</span>
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="typing-cursor">_</span>
+                    <span class="role-bracket">/&gt;</span>
+                </div>
+                <p class="hero-description animate-fade-in">
+                    <span class="desc-prefix">//</span> Security researcher at the intersection of <span class="highlight">AI</span> and <span class="highlight">Cyberspace</span>.
+                    Building AI-driven offensive tools, adversarial ML systems, and intelligent threat analysis platforms.
+                </p>
+                <div class="hero-cta animate-fade-in">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-terminal"></i>
+                        <span>view_work()</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-link"></i>
+                        <span>establish_connection()</span>
+                    </a>
+                </div>
+                <div class="hero-stats animate-fade-in">
+                    <div class="stat">
+                        <span class="stat-number" id="stat-repos" data-target="0">0</span>
+                        <span class="stat-label">repos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" id="stat-stars" data-target="0">0</span>
+                        <span class="stat-label">stars</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" id="stat-forks" data-target="0">0</span>
+                        <span class="stat-label">forks</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" id="stat-followers" data-target="0">0</span>
+                        <span class="stat-label">followers</span>
+                    </div>
+                </div>
+                <div class="hero-languages animate-fade-in">
+                    <span class="lang-label">LANGUAGES:</span>
+                    <div class="lang-bar" id="lang-bar"></div>
+                </div>
+            </div>
+            <div class="hero-visual animate-fade-in">
+                <div class="hero-avatar">
+                    <div class="avatar-glitch" data-text="">
+                        <img src="loala.jpg" alt="Prashanna Tiwari" class="avatar-img" id="avatar-img">
+                    </div>
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-ring ring-2"></div>
+                    <div class="avatar-ring ring-3"></div>
+                    <div class="avatar-scanline"></div>
+                </div>
+                <div class="floating-icons">
+                    <div class="float-icon" style="--delay: 0s; --x: -70px; --y: -90px;">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="float-icon" style="--delay: 0.7s; --x: 90px; --y: -70px;">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div class="float-icon" style="--delay: 1.4s; --x: -90px; --y: 70px;">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="float-icon" style="--delay: 2.1s; --x: 80px; --y: 90px;">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <div class="float-icon" style="--delay: 2.8s; --x: 0px; --y: -110px;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">SCROLL</span>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 01</span>
+                <h2 class="section-title">about_me<span class="section-bracket">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        <span class="code-prefix">&gt;</span> I'm a <span class="highlight">security researcher</span> and <span class="highlight">AI engineer</span>
+                        driven by the mission to push the boundaries of what's possible at the intersection of artificial intelligence and cybersecurity.
+                    </p>
+                    <p>
+                        <span class="code-prefix">&gt;</span> My work focuses on automating exploitation, training models for vulnerability discovery, and building intelligent systems
+                        that can adapt and respond to emerging threats in real-time. I believe in building tools that don't just follow patterns,
+                        but understand and anticipate them.
+                    </p>
+                    <p>
+                        <span class="code-prefix">&gt;</span> Currently building <span class="highlight">CYPHEX</span> -- an AI-augmented security platform with intelligent
+                        attack orchestration that combines edge device firmware with adaptive machine learning layers.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>Location: Nepal</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-shield-halved"></i>
+                            <span>Role: Security Researcher & AI Engineer</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Mission: Live to Innovate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">prashanna@research:~$</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="terminal-prompt">$</span> cat profile.json</p>
+                            <pre class="terminal-output">{
+  "name": "Prashanna Tiwari",
+  "handle": "dev-prashanna",
+  "role": "AI Security Researcher",
+  "mission": "Live to Innovate",
+  "focus": [
+    "AI-Driven Offensive Security",
+    "Adversarial ML Systems",
+    "Intelligent Threat Analysis",
+    "Autonomous Exploitation"
+  ],
+  "current_project": "CYPHEX",
+  "status": "OPERATIONAL"
+}</pre>
+                            <p><span class="terminal-prompt">$</span> <span class="terminal-cursor">_</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 02</span>
+                <h2 class="section-title">tech_stack<span class="section-bracket">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>languages</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-icon">PY</span><span>Python</span></div>
+                        <div class="skill-item"><span class="skill-icon">C++</span><span>C++</span></div>
+                        <div class="skill-item"><span class="skill-icon">C</span><span>C</span></div>
+                        <div class="skill-item"><span class="skill-icon">SH</span><span>Bash</span></div>
+                        <div class="skill-item"><span class="skill-icon">JS</span><span>JavaScript</span></div>
+                        <div class="skill-item"><span class="skill-icon">SQL</span><span>SQL</span></div>
+                        <div class="skill-item"><span class="skill-icon">HT</span><span>HTML5</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>ai_ml</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-icon">PT</span><span>PyTorch</span></div>
+                        <div class="skill-item"><span class="skill-icon">TF</span><span>TensorFlow</span></div>
+                        <div class="skill-item"><span class="skill-icon">LC</span><span>LangChain</span></div>
+                        <div class="skill-item"><span class="skill-icon">JT</span><span>Jupyter</span></div>
+                        <div class="skill-item"><span class="skill-icon">RG</span><span>RAG Pipelines</span></div>
+                        <div class="skill-item"><span class="skill-icon">DL</span><span>Deep Learning</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category-header">
+                        <i class="fas fa-shield-halved"></i>
+                        <h3>security</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-icon">KL</span><span>Kali Linux</span></div>
+                        <div class="skill-item"><span class="skill-icon">WK</span><span>Wireshark</span></div>
+                        <div class="skill-item"><span class="skill-icon">PI</span><span>Prompt Injection</span></div>
+                        <div class="skill-item"><span class="skill-icon">AM</span><span>Adversarial ML</span></div>
+                        <div class="skill-item"><span class="skill-icon">VH</span><span>Vuln Hunting</span></div>
+                        <div class="skill-item"><span class="skill-icon">AO</span><span>Attack Orchestration</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category-header">
+                        <i class="fas fa-gear"></i>
+                        <h3>tools_platforms</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-icon">DK</span><span>Docker</span></div>
+                        <div class="skill-item"><span class="skill-icon">GH</span><span>Git & GitHub</span></div>
+                        <div class="skill-item"><span class="skill-icon">GA</span><span>GitHub Actions</span></div>
+                        <div class="skill-item"><span class="skill-icon">LX</span><span>Linux</span></div>
+                        <div class="skill-item"><span class="skill-icon">RO</span><span>ROS</span></div>
+                        <div class="skill-item"><span class="skill-icon">GZ</span><span>Gazebo</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 03</span>
+                <h2 class="section-title">projects<span class="section-bracket">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="project-featured">
+                <div class="project-featured-badge">[ ACTIVE ] CURRENT PROJECT</div>
+                <div class="project-card featured" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-featured-content">
+                            <div class="project-featured-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-dharmachakra"></i>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/dev-prashanna/CYPHEX" target="_blank" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="project-name">CYPHEX</h3>
+                            <p class="project-tagline">// AI-Augmented Security Platform</p>
+                            <p class="project-description">
+                                An intelligent security platform combining edge device firmware with adaptive ML layers for automated attack orchestration,
+                                intelligent scan analysis, and adaptive threat classification.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">ESP32</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">PyTorch</span>
+                                <span class="tech-badge">Edge AI</span>
+                                <span class="tech-badge">Security</span>
+                            </div>
+                            <div class="project-features">
+                                <div class="feature">
+                                    <i class="fas fa-microchip"></i>
+                                    <span>Firmware Layer -- Edge device wireless security testing</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-brain"></i>
+                                    <span>AI Layer -- Intelligent scan analysis & threat classification</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Adaptive attack selection based on context</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Dynamically populated by JavaScript from GitHub API -->
+                <div class="project-loading">
+                    <div class="loading-spinner"></div>
+                    <span>fetching repositories from github...</span>
+                </div>
+            </div>
+
+            <div class="projects-more" data-aos="fade-up">
+                <a href="https://github.com/dev-prashanna?tab=repositories" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i>
+                    <span>view_all_repos()</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="section research">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 04</span>
+                <h2 class="section-title">research_areas<span class="section-bracket">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="research-grid">
+                <div class="research-card" data-aos="fade-up">
+                    <div class="research-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>AI-Driven Offensive Security</h3>
+                    <p>Building intelligent tools that automate exploitation and vulnerability discovery using machine learning models trained on adversarial patterns.</p>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="research-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Adversarial ML Systems</h3>
+                    <p>Researching attack and defense mechanisms in machine learning models, including prompt injection, jailbreak detection, and model robustness.</p>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="research-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Intelligent Threat Analysis</h3>
+                    <p>Developing platforms that understand, classify, and respond to cybersecurity threats in real-time using adaptive intelligence.</p>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="research-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Autonomous Robotics</h3>
+                    <p>Building perception systems for autonomous robots using deep reinforcement learning, ROS, and physics-based simulation environments.</p>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="research-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Edge AI & IoT Security</h3>
+                    <p>Deploying AI models on edge devices like ESP32 for real-time security monitoring and autonomous threat response at the network edge.</p>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="research-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>LLM Security & Guardrails</h3>
+                    <p>Researching prompt injection attacks, jailbreak techniques, and building defensive frameworks to secure large language model deployments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 05</span>
+                <h2 class="section-title">contact<span class="section-bracket">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>
+                        <span class="code-prefix">&gt;</span> Always interested in new opportunities, research collaborations, or connecting with fellow researchers.
+                        <span class="code-prefix">//</span> Feel free to reach out.
+                    </p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:developerprashanna@gmail.com" class="contact-card" data-aos="fade-up">
+                        <i class="fas fa-envelope"></i>
+                        <span>email</span>
+                        <span class="contact-detail">developerprashanna@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/dev-prashanna" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-github"></i>
+                        <span>github</span>
+                        <span class="contact-detail">dev-prashanna</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prashanna-tiwari-1b9a01398/" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin</span>
+                        <span class="contact-detail">prashanna-tiwari</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-prefix">root@</span>prashanna<span class="logo-cursor">_</span>
+                </div>
+                <p class="footer-tagline">// Live to Innovate</p>
+                <div class="footer-links">
+                    <a href="https://github.com/dev-prashanna" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/prashanna-tiwari-1b9a01398/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:developerprashanna@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 dev-prashanna // built with binary</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
