@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <div class="bg-video-wrap">
+        <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/bg-poster.jpg">
+            <source src="assets/bg.mp4" type="video/mp4">
+        </video>
+        <div class="bg-video-overlay"></div>
+    </div>
+
     <canvas id="matrix-canvas"></canvas>
     <canvas id="scanline-canvas"></canvas>
 
@@ -24,7 +31,8 @@
                 <a href="#projects" class="nav-link"><span class="nav-index">03</span>projects</a>
                 <a href="#achievements" class="nav-link"><span class="nav-index">04</span>achievements</a>
                 <a href="#research" class="nav-link"><span class="nav-index">05</span>research</a>
-                <a href="#contact" class="nav-link"><span class="nav-index">06</span>contact</a>
+                <a href="#videos" class="nav-link"><span class="nav-index">06</span>videos</a>
+                <a href="#contact" class="nav-link"><span class="nav-index">07</span>contact</a>
             </div>
             <div class="nav-status">
                 <span class="status-dot"></span>
@@ -275,6 +283,7 @@
                 <span class="section-tag">// 03</span>
                 <h2 class="section-title">projects<span class="section-bracket">()</span></h2>
                 <div class="section-line"></div>
+                <span class="projects-sync" id="projects-sync">// syncing repositories from github...</span>
             </div>
 
             <div class="project-featured">
@@ -325,14 +334,141 @@
             </div>
 
             <div class="projects-grid" id="projects-grid">
-                <!-- Dynamically populated by JavaScript from GitHub API -->
-                <div class="project-loading">
-                    <div class="loading-spinner"></div>
-                    <span>fetching repositories from github...</span>
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-dharmachakra"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/dev-prashanna/CYPHEX" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">CYPHEX</h3>
+                        <p class="project-description">CLI-only ESP32 Marauder fork for wireless security testing. No display, no SD card -- pure terminal-driven attack orchestration.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">ESP32</span>
+                            <span class="tech-badge">Security</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="tech-badge">1 star</span>
+                            <span class="project-lang">C++</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-brain"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/dev-prashanna/NEURAQUIRE" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">NEURAQUIRE</h3>
+                        <p class="project-description">RAG-powered research assistant for academic paper analysis with PDF parsing, semantic chunking, and intelligent retrieval.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">RAG</span>
+                            <span class="tech-badge">LangChain</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-lang">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-image"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/dev-prashanna/Image-Segmentation-Naterida" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">IMAGE_SEGMENTATION_NATERIDA</h3>
+                        <p class="project-description">U-Net semantic segmentation for autonomous agricultural robots with auto-generated labels via GroundingDINO + SAM.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">U-Net</span>
+                            <span class="tech-badge">Computer Vision</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-lang">TeX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="240">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-eye"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/dev-prashanna/Spatial_Preception" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">SPATIAL_PERCEPTION</h3>
+                        <p class="project-description">Robotics and AI research focused on deep learning, computer vision, and spatial awareness for autonomous systems.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Deep Learning</span>
+                            <span class="tech-badge">OpenCV</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="tech-badge">1 star</span>
+                            <span class="project-lang">Jupyter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="320">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-user-secret"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/dev-prashanna/Guardrailer" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">GUARDRAILER</h3>
+                        <p class="project-description">Multi-signal, cascaded defense architecture for prompt injection detection and LLM security guardrails.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">LLM Security</span>
+                            <span class="tech-badge">NLP</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="tech-badge">1 star</span>
+                            <span class="project-lang">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-language"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/dev-prashanna/PROMPT-GUARDRAILS" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">PROMPT_GUARDRAILS</h3>
+                        <p class="project-description">DeBERTa-Firewall: Prompt injection and jailbreak detection framework with comprehensive adversarial evaluation.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">DeBERTa</span>
+                            <span class="tech-badge">Adversarial ML</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-lang">Python</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="projects-more" data-aos="fade-up">
+                <button type="button" id="projects-load-more" class="btn btn-outline" hidden>
+                    <i class="fas fa-ellipsis-h"></i>
+                    <span id="projects-load-more-label">load_more()</span>
+                </button>
                 <a href="https://github.com/dev-prashanna?tab=repositories" target="_blank" class="btn btn-outline">
                     <i class="fab fa-github"></i>
                     <span>view_all_repos()</span>
@@ -457,10 +593,125 @@
         </div>
     </section>
 
+    <section id="videos" class="section videos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// 06</span>
+                <h2 class="section-title">project_videos<span class="section-bracket">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="videos-filter">
+                <button class="filter-btn active" data-filter="all">all</button>
+                <button class="filter-btn" data-filter="ai">ai_ml</button>
+                <button class="filter-btn" data-filter="security">security</button>
+                <button class="filter-btn" data-filter="robotics">robotics</button>
+            </div>
+
+            <div class="videos-gallery" id="videos-gallery">
+                <div class="video-card" data-category="ai" data-aos="fade-up">
+                    <div class="video-thumb">
+                        <div class="video-thumb-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-duration">4:32</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Deepfake Audio Detection with CNNs</h4>
+                        <p>Classifying real vs AI-generated voices using mel spectrograms and signal processing</p>
+                        <div class="video-tags">
+                            <span>PyTorch</span><span>CNN</span><span>STFT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" data-category="ai" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-thumb">
+                        <div class="video-thumb-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-duration">6:15</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Plant Disease Prediction System</h4>
+                        <p>96% accuracy deep learning model with LSTM time-series forecasting</p>
+                        <div class="video-tags">
+                            <span>Deep Learning</span><span>Computer Vision</span><span>LSTM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" data-category="security" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-thumb">
+                        <div class="video-thumb-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-duration">8:47</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>CYPHEX Platform Demo</h4>
+                        <p>AI-augmented security platform with intelligent attack orchestration</p>
+                        <div class="video-tags">
+                            <span>ESP32</span><span>Python</span><span>Edge AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" data-category="robotics" data-aos="fade-up" data-aos-delay="300">
+                    <div class="video-thumb">
+                        <div class="video-thumb-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-duration">5:20</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>NATERIDA Autonomous Robot</h4>
+                        <p>Award-winning robotics project for environmental monitoring</p>
+                        <div class="video-tags">
+                            <span>Robotics</span><span>ESP32</span><span>IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" data-category="security" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-thumb">
+                        <div class="video-thumb-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-duration">7:03</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Adversarial ML Attack Demo</h4>
+                        <p>Prompt injection and jailbreak techniques on LLM guardrails</p>
+                        <div class="video-tags">
+                            <span>Adversarial ML</span><span>LLM Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" data-category="ai" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-thumb">
+                        <div class="video-thumb-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-duration">3:45</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>Fusion Hacks 2 Walkthrough</h4>
+                        <p>1st place winning project presentation and demo</p>
+                        <div class="video-tags">
+                            <span>OpenCV</span><span>PyTorch</span><span>GPS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="research" class="section research">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">// 05</span>
+                <span class="section-tag">// 07</span>
                 <h2 class="section-title">research_areas<span class="section-bracket">()</span></h2>
                 <div class="section-line"></div>
             </div>
@@ -514,7 +765,7 @@
     <section id="contact" class="section contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">// 06</span>
+                <span class="section-tag">// 08</span>
                 <h2 class="section-title">contact<span class="section-bracket">()</span></h2>
                 <div class="section-line"></div>
             </div>
