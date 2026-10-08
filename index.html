@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dev-prashanna // AI Security Researcher</title>
-    <meta name="description" content="Prashanna Tiwari - Security researcher at the intersection of AI and Cyberspace. Building AI-driven offensive tools, adversarial ML systems, and intelligent threat analysis platforms.">
+    <title>dev-prashanna // Physical AI Researcher</title>
+    <meta name="description" content="Prashanna Tiwari - Physical AI researcher working to make physical AI safe for both humans and cyberspace. Building AI-driven security tools, adversarial ML systems, and intelligent threat analysis platforms.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <div class="intro-loader" id="intro-loader">
+        <video class="intro-video" id="intro-video" muted playsinline preload="auto" poster="assets/intro-poster.jpg">
+            <source src="assets/intro.mp4" type="video/mp4">
+        </video>
+        <div class="intro-scrim"></div>
+        <div class="intro-content">
+            <div class="intro-kicker">// secure terminal -- access protocol</div>
+            <div class="intro-title">
+                <span class="intro-prefix">$</span><span id="intro-typed">WELCOME TO TIWARI'S REALM</span><span class="intro-caret">_</span>
+            </div>
+            <div class="intro-status" id="intro-status">// establishing encrypted channel...</div>
+        </div>
+        <button type="button" class="intro-skip" id="intro-skip">skip_intro()</button>
+    </div>
+    <noscript>
+        <style>
+            .intro-loader { display: none !important; }
+        </style>
+    </noscript>
+
     <div class="bg-video-wrap">
-        <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/bg-poster.jpg">
+        <video id="bg-video" class="bg-video" muted loop playsinline preload="auto" poster="assets/bg-poster.jpg">
             <source src="assets/bg.mp4" type="video/mp4">
         </video>
         <div class="bg-video-overlay"></div>
@@ -63,8 +83,9 @@
                     <span class="role-bracket">/&gt;</span>
                 </div>
                 <p class="hero-description animate-fade-in">
-                    <span class="desc-prefix">//</span> Security researcher at the intersection of <span class="highlight">AI</span> and <span class="highlight">Cyberspace</span>.
-                    Building AI-driven offensive tools, adversarial ML systems, and intelligent threat analysis platforms.
+                    <span class="desc-prefix">//</span> Physical AI researcher working to make <span class="highlight">physical AI</span>
+                    safe for both <span class="highlight">humans</span> and <span class="highlight">cyberspace</span>.
+                    Building AI-driven security tools, adversarial ML systems, and intelligent threat analysis platforms.
                 </p>
                 <div class="hero-cta animate-fade-in">
                     <a href="#projects" class="btn btn-primary">
@@ -147,8 +168,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <p class="about-intro">
-                        <span class="code-prefix">&gt;</span> I'm a <span class="highlight">security researcher</span> and <span class="highlight">AI engineer</span>
-                        driven by the mission to push the boundaries of what's possible at the intersection of artificial intelligence and cybersecurity.
+                        <span class="code-prefix">&gt;</span> I'm a <span class="highlight">physical AI researcher</span> working to make
+                        <span class="highlight">physical AI</span> safe for both <span class="highlight">humans</span> and <span class="highlight">cyberspace</span> --
+                        pushing the boundaries of what's possible where intelligent machines meet the real world.
                     </p>
                     <p>
                         <span class="code-prefix">&gt;</span> My work focuses on automating exploitation, training models for vulnerability discovery, and building intelligent systems
@@ -166,7 +188,7 @@
                         </div>
                         <div class="detail-item">
                             <i class="fas fa-shield-halved"></i>
-                            <span>Role: Security Researcher & AI Engineer</span>
+                            <span>Role: Physical AI Researcher</span>
                         </div>
                         <div class="detail-item">
                             <i class="fas fa-bolt"></i>
@@ -189,13 +211,13 @@
                             <pre class="terminal-output">{
   "name": "Prashanna Tiwari",
   "handle": "dev-prashanna",
-  "role": "AI Security Researcher",
-  "mission": "Live to Innovate",
+  "role": "Physical AI Researcher",
+  "mission": "Make Physical AI Safe for Humans and Cyberspace",
   "focus": [
-    "AI-Driven Offensive Security",
+    "Physical AI Safety",
+    "Robot Perception & Autonomy",
     "Adversarial ML Systems",
-    "Intelligent Threat Analysis",
-    "Autonomous Exploitation"
+    "Intelligent Threat Analysis"
   ],
   "current_project": "CYPHEX",
   "status": "OPERATIONAL"
@@ -597,7 +619,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">// 06</span>
-                <h2 class="section-title">project_videos<span class="section-bracket">()</span></h2>
+                <h2 class="section-title">youtube_videos<span class="section-bracket">()</span></h2>
                 <div class="section-line"></div>
             </div>
 
@@ -606,104 +628,82 @@
                 <button class="filter-btn" data-filter="ai">ai_ml</button>
                 <button class="filter-btn" data-filter="security">security</button>
                 <button class="filter-btn" data-filter="robotics">robotics</button>
+                <button class="filter-btn" data-filter="shorts">shorts</button>
             </div>
 
             <div class="videos-gallery" id="videos-gallery">
-                <div class="video-card" data-category="ai" data-aos="fade-up">
+                <a class="video-card" href="https://www.youtube.com/watch?v=Dh8nN_bkk18" target="_blank" rel="noopener" data-category="robotics" data-format="video" data-aos="fade-up">
                     <div class="video-thumb">
-                        <div class="video-thumb-placeholder">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <span class="video-duration">4:32</span>
+                        <div class="video-thumb-placeholder"><i class="fas fa-play"></i></div>
+                        <img src="https://i.ytimg.com/vi/Dh8nN_bkk18/hqdefault.jpg" alt="Giving a Robot Eye-Sight With 0 Brain Cells" loading="lazy">
+                        <span class="video-thumb-play"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">9:41</span>
                     </div>
                     <div class="video-info">
-                        <h4>Deepfake Audio Detection with CNNs</h4>
-                        <p>Classifying real vs AI-generated voices using mel spectrograms and signal processing</p>
+                        <h4>Giving a Robot Eye-Sight With 0 Brain Cells | Depth Vision Part 1</h4>
+                        <p>// depth-only machine vision for physical AI</p>
                         <div class="video-tags">
-                            <span>PyTorch</span><span>CNN</span><span>STFT</span>
+                            <span>Depth Vision</span><span>Robotics</span><span>Stereo</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="video-card" data-category="ai" data-aos="fade-up" data-aos-delay="100">
+                <a class="video-card" href="https://www.youtube.com/shorts/OgKXtvlbQ6I" target="_blank" rel="noopener" data-category="ai" data-format="short" data-aos="fade-up" data-aos-delay="80">
                     <div class="video-thumb">
-                        <div class="video-thumb-placeholder">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <span class="video-duration">6:15</span>
+                        <div class="video-thumb-placeholder"><i class="fas fa-play"></i></div>
+                        <img src="https://i.ytimg.com/vi/OgKXtvlbQ6I/hqdefault.jpg" alt="How to save tokens of your AI agent" loading="lazy">
+                        <span class="video-thumb-play"><i class="fas fa-play"></i></span>
+                        <span class="video-badge is-short">[ SHORT ]</span>
+                        <span class="video-duration">1:50</span>
                     </div>
                     <div class="video-info">
-                        <h4>Plant Disease Prediction System</h4>
-                        <p>96% accuracy deep learning model with LSTM time-series forecasting</p>
+                        <h4>How to save tokens of your AI agent</h4>
+                        <p>// cheaper agents without losing reasoning quality</p>
                         <div class="video-tags">
-                            <span>Deep Learning</span><span>Computer Vision</span><span>LSTM</span>
+                            <span>AI Agents</span><span>Tokens</span><span>TechTok</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="video-card" data-category="security" data-aos="fade-up" data-aos-delay="200">
+                <a class="video-card" href="https://www.youtube.com/shorts/mlO8pzuV0Jc" target="_blank" rel="noopener" data-category="security" data-format="short" data-aos="fade-up" data-aos-delay="160">
                     <div class="video-thumb">
-                        <div class="video-thumb-placeholder">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <span class="video-duration">8:47</span>
+                        <div class="video-thumb-placeholder"><i class="fas fa-play"></i></div>
+                        <img src="https://i.ytimg.com/vi/mlO8pzuV0Jc/hqdefault.jpg" alt="Network Vulnerabilities can harm your devices" loading="lazy">
+                        <span class="video-thumb-play"><i class="fas fa-play"></i></span>
+                        <span class="video-badge is-short">[ SHORT ]</span>
+                        <span class="video-duration">1:00</span>
                     </div>
                     <div class="video-info">
-                        <h4>CYPHEX Platform Demo</h4>
-                        <p>AI-augmented security platform with intelligent attack orchestration</p>
+                        <h4>Network Vulnerabilities can harm your devices</h4>
+                        <p>// one unpatched hole is all it takes</p>
                         <div class="video-tags">
-                            <span>ESP32</span><span>Python</span><span>Edge AI</span>
+                            <span>Network Security</span><span>Vulnerabilities</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="video-card" data-category="robotics" data-aos="fade-up" data-aos-delay="300">
+                <a class="video-card" href="https://www.youtube.com/watch?v=VjLoIRxK3KU" target="_blank" rel="noopener" data-category="robotics" data-format="video" data-aos="fade-up" data-aos-delay="240">
                     <div class="video-thumb">
-                        <div class="video-thumb-placeholder">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <span class="video-duration">5:20</span>
+                        <div class="video-thumb-placeholder"><i class="fas fa-play"></i></div>
+                        <img src="https://i.ytimg.com/vi/VjLoIRxK3KU/hqdefault.jpg" alt="NATERIDA - A Smart Bot Built to Solve Real-World Problems" loading="lazy">
+                        <span class="video-thumb-play"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">6:12</span>
                     </div>
                     <div class="video-info">
-                        <h4>NATERIDA Autonomous Robot</h4>
-                        <p>Award-winning robotics project for environmental monitoring</p>
+                        <h4>NATERIDA -- A Smart Bot Built to Solve Real-World Problems</h4>
+                        <p>// autonomous robot for real-world tasks</p>
                         <div class="video-tags">
-                            <span>Robotics</span><span>ESP32</span><span>IoT</span>
+                            <span>Robotics</span><span>Autonomy</span><span>IoT</span>
                         </div>
                     </div>
-                </div>
+                </a>
+            </div>
 
-                <div class="video-card" data-category="security" data-aos="fade-up" data-aos-delay="100">
-                    <div class="video-thumb">
-                        <div class="video-thumb-placeholder">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <span class="video-duration">7:03</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Adversarial ML Attack Demo</h4>
-                        <p>Prompt injection and jailbreak techniques on LLM guardrails</p>
-                        <div class="video-tags">
-                            <span>Adversarial ML</span><span>LLM Security</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card" data-category="ai" data-aos="fade-up" data-aos-delay="200">
-                    <div class="video-thumb">
-                        <div class="video-thumb-placeholder">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <span class="video-duration">3:45</span>
-                    </div>
-                    <div class="video-info">
-                        <h4>Fusion Hacks 2 Walkthrough</h4>
-                        <p>1st place winning project presentation and demo</p>
-                        <div class="video-tags">
-                            <span>OpenCV</span><span>PyTorch</span><span>GPS</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="projects-more" data-aos="fade-up">
+                <a href="https://www.youtube.com/@PrashannaDeveloper" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fab fa-youtube"></i>
+                    <span>subscribe()</span>
+                </a>
             </div>
         </div>
     </section>

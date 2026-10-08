@@ -84,11 +84,12 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // ==================== TYPING EFFECT ====================
 const typingElement = document.getElementById('typing-text');
 const phrases = [
+    'physical AI safety',
+    'secure embodied agents',
     'AI-driven offensive tools',
     'intelligent threat analysis',
     'adversarial ML systems',
-    'autonomous exploit platforms',
-    'security research frameworks',
+    'robot perception systems',
     'edge AI solutions',
     'CYPHEX platform'
 ];
@@ -122,7 +123,20 @@ function typeEffect() {
     setTimeout(typeEffect, typingDelay);
 }
 
-typeEffect();
+let heroTypingStarted = false;
+
+function startHeroTyping() {
+    if (heroTypingStarted || !typingElement) return;
+    heroTypingStarted = true;
+    typeEffect();
+}
+
+if (document.getElementById('intro-loader')) {
+    document.addEventListener('intro:done', startHeroTyping, { once: true });
+    setTimeout(startHeroTyping, 9000);
+} else {
+    startHeroTyping();
+}
 
 // ==================== SCROLL ANIMATIONS (AOS-like) ====================
 const observedAosElements = new Set();
@@ -489,41 +503,100 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     fetchGitHubData();
     initVideoFilters();
+    fetchYouTubeVideos();
 });
 
 // ==================== VIDEO FILTERS ====================
+let videoFiltersBound = false;
+let activeVideoFilter = 'all';
+
+function videoCardMatches(card, filter) {
+    if (filter === 'all') return true;
+    if (filter === 'shorts') return card.getAttribute('data-format') === 'short';
+    return card.getAttribute('data-category') === filter;
+}
+
+function applyVideoFilter(filter) {
+    document.querySelectorAll('.video-card').forEach((card, i) => {
+        if (videoCardMatches(card, filter)) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, i * 60);
+        } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 300);
+        }
+    });
+}
+
 function initVideoFilters() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const videoCards = document.querySelectorAll('.video-card');
+    if (videoFiltersBound) return;
+    videoFiltersBound = true;
 
-    filterBtns.forEach(btn => {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-
-            videoCards.forEach((card, i) => {
-                const category = card.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
-                    card.style.display = '';
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, i * 60);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
+            activeVideoFilter = btn.getAttribute('data-filter') || 'all';
+            applyVideoFilter(activeVideoFilter);
         });
     });
+}
+
+// ==================== YOUTUBE UPLOADS ====================
+function videoCardHTML(video, index) {
+    const short = !!video.isShort;
+    const href = short && video.shortUrl ? video.shortUrl : (video.url || `https://www.youtube.com/watch?v=${video.id}`);
+    const thumbnail = video.thumbnail || `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+    const description = video.description || (video.publishedLabel ? `// uploaded ${video.publishedLabel}` : '// new upload');
+    const badge = short ? '<span class="video-badge is-short">[ SHORT ]</span>' : '';
+    const duration = video.durationLabel ? `<span class="video-duration">${escapeHtml(video.durationLabel)}</span>` : '';
+    const tags = (video.tags || []).map(tag => `<span>${escapeHtml(tag)}</span>`).join('');
+
+    return `
+        <a class="video-card" href="${escapeHtml(href)}" target="_blank" rel="noopener"
+           data-category="${escapeHtml(video.category || 'ai')}" data-format="${short ? 'short' : 'video'}"
+           data-aos="fade-up" data-aos-delay="${(index % 3) * 80}">
+            <div class="video-thumb">
+                <div class="video-thumb-placeholder"><i class="fas fa-play"></i></div>
+                <img src="${escapeHtml(thumbnail)}" alt="${escapeHtml(video.title)}" loading="lazy">
+                <span class="video-thumb-play"><i class="fas fa-play"></i></span>
+                ${badge}${duration}
+            </div>
+            <div class="video-info">
+                <h4>${escapeHtml(video.title)}</h4>
+                <p>${escapeHtml(description)}</p>
+                <div class="video-tags">${tags}</div>
+            </div>
+        </a>`;
+}
+
+async function fetchYouTubeVideos() {
+    try {
+        const response = await fetch('assets/youtube.json', { cache: 'no-cache' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+        const videos = Array.isArray(data.videos) ? data.videos : [];
+        const gallery = document.getElementById('videos-gallery');
+        if (!videos.length || !gallery) return;
+
+        gallery.innerHTML = videos.map(videoCardHTML).join('');
+        initVideoFilters();
+        applyVideoFilter(activeVideoFilter);
+        initScrollAnimations();
+    } catch (error) {
+        // Static cards stay in place when the feed file is unavailable
+        console.warn('YouTube feed unavailable:', error);
+    }
 }
 
 // ==================== MOUSE TRAIL ====================
@@ -598,11 +671,18 @@ document.head.appendChild(glitchStyle);
 
 // ==================== BACKGROUND VIDEO ====================
 const bgVideo = document.getElementById('bg-video');
+const introLoader = document.getElementById('intro-loader');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function startBackgroundVideo() {
+    if (typeof window.__startBackgroundVideo === 'function') window.__startBackgroundVideo();
+}
 
 if (bgVideo) {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let bgVideoArmed = false;
 
     const startVideo = () => {
+        if (!bgVideoArmed) return;
         if (prefersReducedMotion) {
             bgVideo.pause();
             return;
@@ -616,12 +696,20 @@ if (bgVideo) {
         }
     };
 
+    window.__startBackgroundVideo = () => {
+        bgVideoArmed = true;
+        startVideo();
+    };
+
+    // Buffer immediately, but only start playing once the intro is gone
     if (bgVideo.readyState >= 2) {
         startVideo();
     } else {
         bgVideo.addEventListener('loadeddata', startVideo, { once: true });
         bgVideo.load();
     }
+
+    if (!introLoader || prefersReducedMotion) startBackgroundVideo();
 
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
@@ -631,3 +719,95 @@ if (bgVideo) {
         }
     });
 }
+
+// ==================== INTRO LOADER ====================
+(function runIntro() {
+    const loader = document.getElementById('intro-loader');
+    if (!loader) return;
+
+    const INTRO_MS = 3000;
+    const INTRO_TEXT = "WELCOME TO TIWARI'S REALM";
+    const SCRAMBLE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&/<>*';
+    const typedEl = document.getElementById('intro-typed');
+    const statusEl = document.getElementById('intro-status');
+    const video = document.getElementById('intro-video');
+    const skipBtn = document.getElementById('intro-skip');
+
+    let finished = false;
+    let revealCount = 0;
+    let scrambleTimer = null;
+    let revealTimer = null;
+    let progressTimer = null;
+    const startedAt = Date.now();
+
+    const render = () => {
+        if (!typedEl) return;
+        let out = INTRO_TEXT.slice(0, revealCount);
+        const pending = Math.min(3, INTRO_TEXT.length - revealCount);
+        for (let i = 0; i < pending; i++) {
+            const char = INTRO_TEXT[revealCount + i];
+            out += char === ' ' ? ' ' : SCRAMBLE[Math.floor(Math.random() * SCRAMBLE.length)];
+        }
+        typedEl.textContent = out;
+    };
+
+    const finish = () => {
+        if (finished) return;
+        finished = true;
+
+        clearInterval(scrambleTimer);
+        clearInterval(progressTimer);
+        clearTimeout(revealTimer);
+
+        if (typedEl) typedEl.textContent = INTRO_TEXT;
+        if (statusEl) statusEl.textContent = '// access granted -- entering realm';
+        if (video) video.pause();
+
+        document.documentElement.classList.remove('intro-active');
+        loader.classList.add('is-done');
+        document.dispatchEvent(new Event('intro:done'));
+        startBackgroundVideo();
+
+        setTimeout(() => loader.remove(), 700);
+    };
+
+    if (prefersReducedMotion) {
+        finish();
+        return;
+    }
+
+    document.documentElement.classList.add('intro-active');
+    render();
+
+    setTimeout(finish, INTRO_MS);
+
+    scrambleTimer = setInterval(render, 45);
+    revealTimer = setInterval(() => {
+        revealCount += 1;
+        render();
+        if (revealCount >= INTRO_TEXT.length) {
+            clearInterval(revealTimer);
+            revealTimer = null;
+        }
+    }, 90);
+
+    progressTimer = setInterval(() => {
+        if (!statusEl || finished) return;
+        if (revealCount < INTRO_TEXT.length) {
+            const pct = Math.min(99, Math.round(((Date.now() - startedAt) / INTRO_MS) * 100));
+            statusEl.textContent = `// decrypting realm access [${pct}%]`;
+        } else {
+            statusEl.textContent = '// access granted -- entering realm';
+        }
+    }, 120);
+
+    if (video) {
+        video.play().catch(() => {});
+        video.addEventListener('error', () => {}, { once: true });
+    }
+
+    if (skipBtn) skipBtn.addEventListener('click', finish);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') finish();
+    });
+})();

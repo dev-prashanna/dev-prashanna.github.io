@@ -1,0 +1,86 @@
+{
+  "channel": {
+    "id": "UCVcQya6k-3ZSaH7wSZ9moCA",
+    "handle": "@PrashannaDeveloper",
+    "url": "https://www.youtube.com/@PrashannaDeveloper"
+  },
+  "updated": "2026-10-08T05:43:22+00:00",
+  "count": 4,
+  "videos": [
+    {
+      "id": "Dh8nN_bkk18",
+      "title": "Giving a Robot Eye-Sight With 0 Brain Cells | Depth Vision Part 1",
+      "description": "Depth-only robot vision -- giving a machine eye-sight without a single brain cell.",
+      "published": "2026-10-05T13:05:22+00:00",
+      "publishedLabel": "2026-10-05",
+      "url": "https://www.youtube.com/watch?v=Dh8nN_bkk18",
+      "shortUrl": "https://www.youtube.com/shorts/Dh8nN_bkk18",
+      "thumbnail": "https://i1.ytimg.com/vi/Dh8nN_bkk18/hqdefault.jpg",
+      "duration": 581,
+      "durationLabel": "9:41",
+      "isShort": false,
+      "category": "robotics",
+      "tags": [
+        "Depth Vision",
+        "Robotics",
+        "Stereo"
+      ]
+    },
+    {
+      "id": "OgKXtvlbQ6I",
+      "title": "How to save tokens of your AI agent",
+      "description": "Cutting AI agent token usage without killing the reasoning quality.",
+      "published": "2026-08-15T02:58:58+00:00",
+      "publishedLabel": "2026-08-15",
+      "url": "https://www.youtube.com/watch?v=OgKXtvlbQ6I",
+      "shortUrl": "https://www.youtube.com/shorts/OgKXtvlbQ6I",
+      "thumbnail": "https://i4.ytimg.com/vi/OgKXtvlbQ6I/hqdefault.jpg",
+      "duration": 110,
+      "durationLabel": "1:50",
+      "isShort": true,
+      "category": "ai",
+      "tags": [
+        "AI Agents",
+        "Tokens",
+        "TechTok"
+      ]
+    },
+    {
+      "id": "mlO8pzuV0Jc",
+      "title": "Network Vulnerabilities can harm your devices.",
+      "description": "Why one unpatched network hole is enough to compromise your devices.",
+      "published": "2026-07-16T11:05:31+00:00",
+      "publishedLabel": "2026-07-16",
+      "url": "https://www.youtube.com/watch?v=mlO8pzuV0Jc",
+      "shortUrl": "https://www.youtube.com/shorts/mlO8pzuV0Jc",
+      "thumbnail": "https://i2.ytimg.com/vi/mlO8pzuV0Jc/hqdefault.jpg",
+      "duration": 60,
+      "durationLabel": "1:00",
+      "isShort": true,
+      "category": "security",
+      "tags": [
+        "Network Security",
+        "Vulnerabilities"
+      ]
+    },
+    {
+      "id": "VjLoIRxK3KU",
+      "title": "NATERIDA – A Smart Bot Built to Solve Real-World Problems",
+      "description": "NATERIDA -- a smart robot built to solve real-world problems on its own.",
+      "published": "2025-07-25T08:48:07+00:00",
+      "publishedLabel": "2025-07-25",
+      "url": "https://www.youtube.com/watch?v=VjLoIRxK3KU",
+      "shortUrl": "https://www.youtube.com/shorts/VjLoIRxK3KU",
+      "thumbnail": "https://i3.ytimg.com/vi/VjLoIRxK3KU/hqdefault.jpg",
+      "duration": 372,
+      "durationLabel": "6:12",
+      "isShort": false,
+      "category": "robotics",
+      "tags": [
+        "Robotics",
+        "Autonomy",
+        "IoT"
+      ]
+    }
+  ]
+}
