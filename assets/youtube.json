@@ -4,7 +4,7 @@
     "handle": "@PrashannaDeveloper",
     "url": "https://www.youtube.com/@PrashannaDeveloper"
   },
-  "updated": "2026-10-08T05:43:22+00:00",
+  "updated": "2026-10-08T13:39:17+00:00",
   "count": 4,
   "videos": [
     {
@@ -16,8 +16,8 @@
       "url": "https://www.youtube.com/watch?v=Dh8nN_bkk18",
       "shortUrl": "https://www.youtube.com/shorts/Dh8nN_bkk18",
       "thumbnail": "https://i1.ytimg.com/vi/Dh8nN_bkk18/hqdefault.jpg",
-      "duration": 581,
-      "durationLabel": "9:41",
+      "duration": null,
+      "durationLabel": "",
       "isShort": false,
       "category": "robotics",
       "tags": [
@@ -35,8 +35,8 @@
       "url": "https://www.youtube.com/watch?v=OgKXtvlbQ6I",
       "shortUrl": "https://www.youtube.com/shorts/OgKXtvlbQ6I",
       "thumbnail": "https://i4.ytimg.com/vi/OgKXtvlbQ6I/hqdefault.jpg",
-      "duration": 110,
-      "durationLabel": "1:50",
+      "duration": null,
+      "durationLabel": "",
       "isShort": true,
       "category": "ai",
       "tags": [
@@ -54,8 +54,8 @@
       "url": "https://www.youtube.com/watch?v=mlO8pzuV0Jc",
       "shortUrl": "https://www.youtube.com/shorts/mlO8pzuV0Jc",
       "thumbnail": "https://i2.ytimg.com/vi/mlO8pzuV0Jc/hqdefault.jpg",
-      "duration": 60,
-      "durationLabel": "1:00",
+      "duration": null,
+      "durationLabel": "",
       "isShort": true,
       "category": "security",
       "tags": [
@@ -72,8 +72,8 @@
       "url": "https://www.youtube.com/watch?v=VjLoIRxK3KU",
       "shortUrl": "https://www.youtube.com/shorts/VjLoIRxK3KU",
       "thumbnail": "https://i3.ytimg.com/vi/VjLoIRxK3KU/hqdefault.jpg",
-      "duration": 372,
-      "durationLabel": "6:12",
+      "duration": null,
+      "durationLabel": "",
       "isShort": false,
       "category": "robotics",
       "tags": [
