@@ -4,9 +4,24 @@
     "handle": "@PrashannaDeveloper",
     "url": "https://www.youtube.com/@PrashannaDeveloper"
   },
-  "updated": "2026-10-10T12:40:53+00:00",
-  "count": 4,
+  "updated": "2026-10-10T21:50:21+00:00",
+  "count": 5,
   "videos": [
+    {
+      "id": "6Q5TY63ivlM",
+      "title": "Day 7 of making JERRY",
+      "description": "// uploaded 2026-10-10",
+      "published": "2026-10-10T17:48:09+00:00",
+      "publishedLabel": "2026-10-10",
+      "url": "https://www.youtube.com/watch?v=6Q5TY63ivlM",
+      "shortUrl": "https://www.youtube.com/shorts/6Q5TY63ivlM",
+      "thumbnail": "https://i3.ytimg.com/vi/6Q5TY63ivlM/hqdefault.jpg",
+      "duration": null,
+      "durationLabel": "",
+      "isShort": false,
+      "category": "ai",
+      "tags": []
+    },
     {
       "id": "Dh8nN_bkk18",
       "title": "Giving a Robot Eye-Sight With 0 Brain Cells | Depth Vision Part 1",
