@@ -4,7 +4,7 @@
     "handle": "@PrashannaDeveloper",
     "url": "https://www.youtube.com/@PrashannaDeveloper"
   },
-  "updated": "2026-10-30T13:05:37+00:00",
+  "updated": "2026-10-30T22:26:53+00:00",
   "count": 5,
   "videos": [
     {
@@ -69,8 +69,8 @@
       "url": "https://www.youtube.com/watch?v=mlO8pzuV0Jc",
       "shortUrl": "https://www.youtube.com/shorts/mlO8pzuV0Jc",
       "thumbnail": "https://i2.ytimg.com/vi/mlO8pzuV0Jc/hqdefault.jpg",
-      "duration": 60,
-      "durationLabel": "1:00",
+      "duration": null,
+      "durationLabel": "",
       "isShort": true,
       "category": "security",
       "tags": [
